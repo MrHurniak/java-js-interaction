@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>TODO</title>
+</head>
+<body>
+<h1>TODO</h1>
+<form id="createTodoForm">
+    <input name="task" type="text" placeholder="task"/>
+    <input type="submit">
+</form>
+</body>
+<script>
+
+    document.querySelector("#createTodoForm").onsubmit = async (e) => {
+        e.preventDefault();
+
+        let response = await fetch("http://localhost:8080/api/todo", {
+            method: "POST",
+            body: toJson(new FormData(document.querySelector("#createTodoForm"))),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        console.log(await response.json());
+    }
+
+    function toJson(formData) {
+        let object = {};
+        formData.forEach((value, key) => {
+            object[key] = value
+        });
+        return JSON.stringify(object);
+    }
+</script>
+</html>
