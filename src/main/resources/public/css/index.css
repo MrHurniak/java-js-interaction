@@ -1,0 +1,223 @@
+.heading__container {
+    display: block;
+    position: relative;
+    padding: 5px;
+    alignment: center;
+    text-align: center;
+
+}
+
+.heading {
+    display: inline;
+    padding: 5px;
+    text-align: center;
+    font-size: 2.5rem;
+    transition: all .35s;
+}
+
+.todo {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.todo__list {
+    margin: 1rem 0;
+    padding: 0;
+    max-height: 60vh;
+    overflow: auto;
+    list-style: none;
+
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 2px black;
+}
+
+.todo__item--checked {
+    text-decoration: line-through;
+}
+
+.todo__item {
+    display: flex;
+    padding: 1rem;
+        border-bottom: lightslategrey solid 1px;
+}
+
+.todo__item--open > .todo__label--update {
+    flex-grow: 1;
+}
+
+.todo__text {
+    display: inline;
+    flex-grow: 1;
+    margin: 0 0 0 2rem;
+    font-size: 1.3rem;
+}
+
+/*T0D0 delete button BEGIN*/
+.todo__button--delete:focus, .todo__button--delete:hover {
+    background: black;
+    border-color: black;
+    color: white;
+}
+/*T0D0 delete button BEGIN*/
+
+/*T0D0 create container for input and button BEGIN*/
+.todo__field {
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+}
+
+/*T0D0 create container for input and button END*/
+
+
+/* T0D0 create submit button BEGIN*/
+.todo__submit {
+    margin: 0 auto;
+    display: block;
+
+    width: 170px;
+    height: 40px;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 3px solid black;
+    background: #fff;
+    color: black;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .35s;
+    outline: 0;
+}
+
+.todo__submit:hover, .todo__submit:focus {
+    background: #11998e;
+    border: #11998e;
+    color: #fff;
+}
+
+/* T0D0 create submit button END*/
+.todo__button {
+    width: 10%;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 2px solid black;
+    background: #fff;
+    color: black;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .35s;
+    outline: 0;
+    margin: 0 1%;
+
+}
+
+.todo__button--save:focus, .todo__button--save:hover {
+    background: green;
+    border-color: green;
+    color: white;
+}
+
+.todo__button--cancel:focus, .todo__button--cancel:hover {
+    background: #ff0000;
+    border-color: #ff0000;
+    color: white;
+}
+
+/*T0D0 update BEGIN*/
+.todo__input--update {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid black;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.todo__input--update::placeholder {
+    color: transparent;
+}
+
+.todo__input--update:focus {
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+    font-weight: 700;
+}
+
+/*T0D0 update END*/
+
+/* create T0D0 input BEGIN*/
+.todo__input {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid black;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.todo__input::placeholder {
+    color: transparent;
+}
+
+.todo__input:placeholder-shown ~ .todo__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+
+.todo__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #000000;
+}
+
+/*Maybe use it by js and in error set border-image to red*/
+.todo__input:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+
+.todo__input:focus ~ .todo__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
+}
+
+.todo__input:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+/* create T0D0 input END*/
+
+
+/*Checkboxes*/
+input[type=checkbox] {
+    transform: scale(2);
+    padding: 10px;
+    border-radius: 50px;
+}

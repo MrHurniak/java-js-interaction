@@ -2,39 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Expires" content="0"/>
     <title>TODO</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 </head>
 <body>
-<h1>TODO</h1>
-<form id="createTodoForm">
-    <input name="task" type="text" placeholder="task"/>
-    <input type="submit">
-</form>
+<div class="heading__container">
+    <h1 class="heading">TODO</h1>
+</div>
+<div class="todo">
+    <ul id="todos" class="todo__list">
+    </ul>
+
+    <form id="todo-creator" class="todo__creator">
+        <div class="todo__field">
+            <input class="todo__input" tabindex="1" id="task" name="task" type="text" placeholder="Input you task here"
+                   maxlength="250" required/>
+            <label for="task" class="todo__label">Your task</label>
+        </div>
+        <input class="todo__submit" type="submit" tabindex="2"/>
+    </form>
+</div>
+
 </body>
-<script>
-
-    document.querySelector("#createTodoForm").onsubmit = async (e) => {
-        e.preventDefault();
-
-        let response = await fetch("http://localhost:8080/api/todo", {
-            method: "POST",
-            body: toJson(new FormData(document.querySelector("#createTodoForm"))),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-        console.log(await response.json());
-    }
-
-    function toJson(formData) {
-        let object = {};
-        formData.forEach((value, key) => {
-            object[key] = value
-        });
-        return JSON.stringify(object);
-    }
-</script>
+<script src="js/index.js"></script>
 </html>
