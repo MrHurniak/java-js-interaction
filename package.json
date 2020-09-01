@@ -1,0 +1,23 @@
+{
+  "name": "java-script-interaction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jbuild": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrHurniak/java-js-interaction.git"
+  },
+  "author": "MrHurniak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrHurniak/java-js-interaction/issues"
+  },
+  "homepage": "https://github.com/MrHurniak/java-js-interaction#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
